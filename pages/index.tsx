@@ -18,8 +18,6 @@ const HomePage = () => {
     endDate: new Date(),
   });
 
-  console.log(dates);
-
   const selectionRange: ISelectRange = {
     startDate: dates.startDate,
     endDate: dates.endDate,
@@ -27,8 +25,8 @@ const HomePage = () => {
   };
 
   function handleSelect(ranges: any) {
-    setDates({ ...dates, startDate: ranges.selection.startDate });
-    setDates({ ...dates, endDate: ranges.selection.endDate });
+    setDates((prev) => ({ ...prev, startDate: ranges.selection.startDate }));
+    setDates((prev) => ({ ...prev, endDate: ranges.selection.endDate }));
   }
 
   return (
