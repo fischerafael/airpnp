@@ -33,12 +33,14 @@ const HomePage = () => {
     <VStack w="full" minH="100vh">
       <Header />
 
-      <DateRangePicker
-        ranges={[selectionRange]}
-        minDate={today}
-        rangeColors={rangeColors}
-        onChange={handleSelect}
-      />
+      <Flex w="full" maxW={"container.md"} justify="center">
+        <DateRangePicker
+          ranges={[selectionRange]}
+          minDate={today}
+          rangeColors={rangeColors}
+          onChange={handleSelect}
+        />
+      </Flex>
     </VStack>
   );
 };
