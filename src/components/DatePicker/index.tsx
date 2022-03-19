@@ -1,6 +1,5 @@
-import { Flex, HStack, Input, Text, VStack } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { Header } from "../src/components/Header";
 import { DateRangePicker } from "react-date-range";
 
 const today = new Date();
@@ -12,9 +11,7 @@ interface ISelectRange {
   key: string;
 }
 
-const HomePage = () => {
-  const [search, setSearch] = useState("s");
-
+export const DatePicker = () => {
   const [dates, setDates] = useState({
     startDate: new Date(),
     endDate: new Date(),
@@ -32,21 +29,13 @@ const HomePage = () => {
   }
 
   return (
-    <VStack w="full" minH="100vh">
-      <Header />
-
-      {search && (
-        <Flex w="full" maxW={"container.md"} justify="center">
-          <DateRangePicker
-            ranges={[selectionRange]}
-            minDate={today}
-            rangeColors={rangeColors}
-            onChange={handleSelect}
-          />
-        </Flex>
-      )}
-    </VStack>
+    <Flex w="full" maxW={"container.md"} justify="center">
+      <DateRangePicker
+        ranges={[selectionRange]}
+        minDate={today}
+        rangeColors={rangeColors}
+        onChange={handleSelect}
+      />
+    </Flex>
   );
 };
-
-export default HomePage;
