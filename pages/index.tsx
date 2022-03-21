@@ -4,7 +4,7 @@ import { Header } from "../src/components/Header";
 import { DateRangePicker } from "react-date-range";
 
 const today = new Date();
-const rangeColors = ["#FD5B61"];
+const rangeColors = ["#FD5B62"];
 
 interface ISelectRange {
   startDate: Date;
